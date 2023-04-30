@@ -10,10 +10,11 @@ import io.cucumber.junit.CucumberOptions;
 features="src/resource/java",
 glue = "Steps",
 monochrome = true,
-tags = "@Tag",
+tags = "@Tag6",
 plugin= {"html:target/cucumber-report.html", "json:target/cucumber.json"}
 		
 		)
 public class TestRunner {
+	
 
 }

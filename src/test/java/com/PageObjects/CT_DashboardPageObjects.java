@@ -65,7 +65,10 @@ public class CT_DashboardPageObjects {
 	}
 	
 	public void clickonApplicationFromDropdown(String Application) {
-		rdriver.findElement(By.xpath("//label[contains(text(),'"+Application+"')]")).click();
+		String xpath="//label[contains(text(),'"+Application+"')]";
+		WebElement ele = rdriver.findElement(By.xpath(xpath));
+		explicitwait = new ExplicitWait(rdriver, ele);		
+		ele.click();
 	}
 	
 	public void clickOnProductDropdown() {
@@ -77,7 +80,9 @@ public class CT_DashboardPageObjects {
 	
 	public void clickonProductFromDropdown(String Product) throws InterruptedException {
 		Thread.sleep(5000);
-		rdriver.findElement(By.xpath("//label[contains(text(),'"+Product+"')]")).click();
+		WebElement ele =rdriver.findElement(By.xpath("//label[contains(text(),'"+Product+"')]"));
+		explicitwait = new ExplicitWait(rdriver, ele);	
+		ele.click();
 	}
 	
 	public void clickOnSearchButton() throws InterruptedException {

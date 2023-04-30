@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.PageObjects.CT_DashboardPageObjects;
+import com.PageObjects.CT_DesignTestCasesPageObjects;
 import com.PageObjects.CT_LoginPageObjects;
 
 import io.cucumber.java.en.*;
@@ -17,6 +18,7 @@ public class CLOUDTESTR_Validations {
 	public WebDriver driver;
 	CT_LoginPageObjects loginpageobjects;
 	CT_DashboardPageObjects dashboardpageobjects;
+	CT_DesignTestCasesPageObjects designtestcasesobjects;
 	
 	@Given("Lanuch the URL {string}")
 	public void lanuch_the_url(String url) {
@@ -29,6 +31,7 @@ public class CLOUDTESTR_Validations {
 	    driver.get(url);
 	    loginpageobjects = new CT_LoginPageObjects(driver);
 	    dashboardpageobjects = new CT_DashboardPageObjects(driver);
+	    designtestcasesobjects = new CT_DesignTestCasesPageObjects(driver);
 	}
 
 	@When("Enter the username {string} and password {string}")
@@ -58,8 +61,9 @@ public class CLOUDTESTR_Validations {
 	////-----------Scenario3-------------------//
 	
 	@And("Click on application dropdown from filter")
-	public void click_on_application_dropdown_from_filter() {
+	public void click_on_application_dropdown_from_filter() throws InterruptedException {
 		dashboardpageobjects.clickOnApplicationDropdown();
+		Thread.sleep(5000);
 	   
 	}
 
@@ -94,6 +98,23 @@ public class CLOUDTESTR_Validations {
 	@Then("Validate the menu items should be {string}")
 	public void validate_the_menu_items_should_be(String menuItemSize) {
 	    dashboardpageobjects.validateMenuItems(menuItemSize);
+	}
+
+	
+	////--------SCENARIO-5---------------------/////
+	
+	@And("Mouseover on design and expand design dropdown and click on test cases")
+	public void mouseover_on_design_and_expand_design_dropdown_and_click_on_test_cases() throws InterruptedException {
+		Thread.sleep(5000);
+	    designtestcasesobjects.clickonDesignMenuItem();
+	    Thread.sleep(2000);
+	    designtestcasesobjects.clickonTestCasesMenuItem();
+	    Thread.sleep(6000);
+	}
+
+	@Then("Verify the page should have test cases atleast one")
+	public void verify_the_page_should_have_test_cases_atleast_one() {
+	    designtestcasesobjects.validateTCPage();
 	}
 
 }
