@@ -100,6 +100,7 @@ public class CT_DashboardPageObjects {
 	}
 	
 	public void validateMenuItems(String menuSize) {
+		
 		int menuItemActualSize = menuItemsList.size();
 		int menuItemExpectedSize=Integer.parseInt(menuSize);
 		assertEquals(menuItemActualSize,menuItemExpectedSize);

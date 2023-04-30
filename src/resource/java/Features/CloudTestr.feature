@@ -26,7 +26,7 @@ And Select the product as "Account"
 And Click on search button
 Then validate widget values should contains Accounts "Accounts"
 
-@Tag4
+@Tag
 Scenario: CT_TC_4 Verify the menu items
 Given Lanuch the URL "https://global.cloudtestr.com/app/#/login"
 When Enter the username "Divya.Kukkala@suneratech.com" and password "Welcome@4321"
