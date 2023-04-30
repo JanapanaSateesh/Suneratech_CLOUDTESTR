@@ -14,7 +14,7 @@ When Enter the username "Divya.Kukkala@suneratech.com" and password "Welcome@432
 And Click on login button
 Then Verify the number of widgets "6"
 
-@Tag4
+@Tag
 Scenario: CT_TC_3 Apply the filter and validate the filter values
 Given Lanuch the URL "https://global.cloudtestr.com/app/#/login"
 When Enter the username "Divya.Kukkala@suneratech.com" and password "Welcome@4321"

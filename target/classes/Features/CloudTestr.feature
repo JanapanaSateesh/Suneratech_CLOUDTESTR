@@ -14,7 +14,7 @@ When Enter the username "Divya.Kukkala@suneratech.com" and password "Welcome@432
 And Click on login button
 Then Verify the number of widgets "6"
 
-@Tag4
+@Tag
 Scenario: CT_TC_3 Apply the filter and validate the filter values
 Given Lanuch the URL "https://global.cloudtestr.com/app/#/login"
 When Enter the username "Divya.Kukkala@suneratech.com" and password "Welcome@4321"
@@ -34,7 +34,7 @@ And Click on login button
 Then Validate the menu items should be "9"
 
 @Tag
-Scenario: CT_TC_5 Verify the menu items
+Scenario: CT_TC_5 Verify the Test Cases Page have TCs
 Given Lanuch the URL "https://global.cloudtestr.com/app/#/login"
 When Enter the username "Divya.Kukkala@suneratech.com" and password "Welcome@4321"
 And Click on login button
@@ -42,7 +42,7 @@ And Mouseover on design and expand design dropdown and click on test cases
 Then Verify the page should have test cases atleast one
 
 @Tag
-Scenario: CT_TC_6 Verify the menu items
+Scenario: CT_TC_6 Apply the filter in TC page and TC page should have atleast one TC
 Given Lanuch the URL "https://global.cloudtestr.com/app/#/login"
 When Enter the username "Divya.Kukkala@suneratech.com" and password "Welcome@4321"
 And Click on login button
