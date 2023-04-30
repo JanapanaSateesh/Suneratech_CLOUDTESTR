@@ -40,8 +40,12 @@ public class CT_DashboardPageObjects {
 	@FindBy(xpath="//button//span[text()='Search']")
 	WebElement searchbutton;
 	
-		
+	@FindBys(@FindBy(xpath="//app-sidebar//ul//li[@class='nav-list m-0']"))
+	List<WebElement> menuItemsList;
 	
+	
+	
+		
 	public void validateWidgets(String widgetCount) {
 		int actualWidgetSize = widgets.size();
 		System.out.println("Actual Widets "+actualWidgetSize);
@@ -93,6 +97,12 @@ public class CT_DashboardPageObjects {
 			
 			assertTrue(validateAccount.toLowerCase().contains(widgetData.toLowerCase()));
 		}
+	}
+	
+	public void validateMenuItems(String menuSize) {
+		int menuItemActualSize = menuItemsList.size();
+		int menuItemExpectedSize=Integer.parseInt(menuSize);
+		assertEquals(menuItemActualSize,menuItemExpectedSize);
 	}
 	
 	

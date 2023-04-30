@@ -89,6 +89,11 @@ public class CLOUDTESTR_Validations {
 	    dashboardpageobjects.validateWidgetDataAfterSearch(accountName);
 	}
 
-
+	/////--------SCENARIO-4 -------------//
+	
+	@Then("Validate the menu items should be {string}")
+	public void validate_the_menu_items_should_be(String menuItemSize) {
+	    dashboardpageobjects.validateMenuItems(menuItemSize);
+	}
 
 }
