@@ -105,6 +105,14 @@ public class CT_DashboardPageObjects {
 		int menuItemExpectedSize=Integer.parseInt(menuSize);
 		System.out.println("Actual Menu Items Size from Application "+""+menuItemActualSize);
 		System.out.println("Expected Menu Items Size "+menuSize);
+		
+		for(WebElement ele:menuItemsList) {
+			explicitwait = new ExplicitWait(rdriver, ele);
+			
+			String menuItemsString = ele.getText();
+			System.out.println("Menu Items list--"+menuItemsString);
+		}
+		
 		assertEquals(menuItemActualSize,menuItemExpectedSize);
 	}
 	
