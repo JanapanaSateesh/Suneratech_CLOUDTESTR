@@ -4,7 +4,7 @@ Feature: Validate the CloudTestr post build deployments
     Given Lanuch the URL "https://global.cloudtestr.com/app/#/login"
     When Enter the username  and password
       | username                     | password     |
-      | Divya.Kukkala@suneratech.com | Welcome@4321 |
+      | RGl2eWEuS3Vra2FsYUBzdW5lcmF0ZWNoLmNvbQ== | V2VsY29tZUA0MzIx |
     And Click on login button
 
   @Smoke

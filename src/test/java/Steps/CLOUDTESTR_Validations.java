@@ -61,8 +61,18 @@ public class CLOUDTESTR_Validations {
 	   List<Map<String,String>> credentialsList = dataTable.asMaps();
 	   String username = credentialsList.get(0).get("username");
 	   String password = credentialsList.get(0).get("password");
-	   loginpageobjects.setUserName(username);
-	   loginpageobjects.setPassword(password);
+	   
+//	   byte[] encodedBytes = java.util.Base64.getEncoder().encode(password.getBytes());
+//	   System.out.println("encodedBytes ---------------> password" + new String(encodedBytes));
+	   
+	   byte[] decodedusername = java.util.Base64.getDecoder().decode(username.getBytes());
+	   System.out.println("decodedBytes ---------------> username after decoding" + new String(decodedusername));
+	   
+	   byte[] decodedpassword= java.util.Base64.getDecoder().decode(password.getBytes());
+	   System.out.println("decodedBytes ---------------> password after decoding" + new String(decodedpassword));
+	   
+	   loginpageobjects.setUserName(new String(decodedusername));
+	   loginpageobjects.setPassword(new String(decodedpassword));
 	}
 
 	@When("Click on login button")
