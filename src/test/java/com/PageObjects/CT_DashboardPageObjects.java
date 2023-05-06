@@ -16,6 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import Utilities.ExplicitWait;
 import Utilities.JSExecutor;
+import Utilities.MouseOver;
 
 
 public class CT_DashboardPageObjects {
@@ -23,6 +24,8 @@ public class CT_DashboardPageObjects {
 	public ExplicitWait explicitwait;
 	public JSExecutor js;
 	public WebDriver rdriver;
+	public MouseOver mouseover;
+	
 	public CT_DashboardPageObjects(WebDriver ldriver) {
 		rdriver=ldriver;
 		PageFactory.initElements(rdriver,this);
@@ -37,7 +40,7 @@ public class CT_DashboardPageObjects {
 	@FindBy(xpath="//div[@class='dropdown drop-ht']//button[@name='Product']")
 	WebElement productdropdown;
 	
-	@FindBy(xpath="//button//span[text()='Search']")
+	@FindBy(xpath="//span[text()='Search']/parent::button")
 	WebElement searchbutton;
 	
 	@FindBys(@FindBy(xpath="//app-sidebar//ul//li[@class='nav-list m-0']"))
@@ -86,8 +89,10 @@ public class CT_DashboardPageObjects {
 	}
 	
 	public void clickOnSearchButton() throws InterruptedException {
-		searchbutton.click();
+		explicitwait = new ExplicitWait(rdriver, searchbutton);
+		js = new JSExecutor(rdriver, searchbutton);	
 		Thread.sleep(5000);
+		mouseover= new MouseOver(rdriver, searchbutton);
 	}
 	
 	public void validateWidgetDataAfterSearch(String widgetData) throws InterruptedException {

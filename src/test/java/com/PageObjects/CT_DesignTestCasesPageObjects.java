@@ -34,6 +34,13 @@ public class CT_DesignTestCasesPageObjects {
 	@FindBys(@FindBy(xpath="//table//tbody//tr//td[2]//span"))
 	List<WebElement> listoftestcases;
 	
+	@FindBy(xpath="//input[@placeholder='Key Word']")
+	WebElement testcasesearchinput;
+	
+	@FindBy(xpath="//span[text()='Search']/parent::button")
+	WebElement searchbutton;
+	
+	
 	
 	public void clickonDesignMenuItem() throws InterruptedException {
 		explicitwait = new ExplicitWait(rdriver, designmenuitem);
@@ -53,6 +60,27 @@ public class CT_DesignTestCasesPageObjects {
 		for(WebElement ele:listoftestcases) {
 			explicitwait= new ExplicitWait(rdriver, ele);
 			String TCName =ele.getText();
+			System.out.println("List of TCs are available --"+ ""+TCName);
+		}
+	}
+	
+	public String TestCaseId=null;
+	public void searchTestCase(String testcaseid) {
+		TestCaseId=testcaseid;
+		testcasesearchinput.sendKeys(testcaseid);
+	}
+	
+	public void clickOnSearchButton() {
+		searchbutton.click();
+	}
+	
+	public void validateTestCaseAfterSearch() {
+		assertTrue(listoftestcases.size()==1);
+		for(WebElement ele:listoftestcases) {
+			explicitwait= new ExplicitWait(rdriver, ele);	
+			String TCName =ele.getText();
+			System.out.println("Test Case Id from above method"+ TestCaseId);
+			assertTrue(TCName.contains(TestCaseId));
 			System.out.println("List of TCs are available --"+ ""+TCName);
 		}
 	}

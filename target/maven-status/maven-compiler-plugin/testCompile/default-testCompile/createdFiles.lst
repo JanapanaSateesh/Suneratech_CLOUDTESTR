@@ -1,8 +1,0 @@
-Steps\CLOUDTESTR_Validations.class
-Utilities\JSExecutor.class
-Utilities\MouseOver.class
-com\PageObjects\CT_DashboardPageObjects.class
-com\PageObjects\CT_DesignTestCasesPageObjects.class
-com\PageObjects\CT_LoginPageObjects.class
-Runner\TestRunner.class
-Utilities\ExplicitWait.class
