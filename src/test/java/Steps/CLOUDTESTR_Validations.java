@@ -1,6 +1,10 @@
 package Steps;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,10 +23,14 @@ import com.PageObjects.CT_TestSetPageObjects;
 
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.netty.handler.codec.base64.Base64;
 
 public class CLOUDTESTR_Validations {
 	
-	public WebDriver driver;
+	//public WebDriver driver;
+	
+	WebDriver driver=BaseClass.getDriver();
+	
 	CT_LoginPageObjects loginpageobjects;
 	CT_DashboardPageObjects dashboardpageobjects;
 	CT_DesignTestCasesPageObjects designtestcasesobjects;
@@ -35,12 +43,7 @@ public class CLOUDTESTR_Validations {
 	
 	@Given("Lanuch the URL {string}")
 	public void lanuch_the_url(String url) {
-		WebDriverManager.chromedriver().setup();
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
-		driver= new ChromeDriver(options);	
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
 	    driver.get(url);
 	    loginpageobjects = new CT_LoginPageObjects(driver);
 	    dashboardpageobjects = new CT_DashboardPageObjects(driver);
@@ -53,8 +56,11 @@ public class CLOUDTESTR_Validations {
 	    performexecutepageobjects = new CT_PerformExecutePageObjects(driver);
 	}
 
-	@When("Enter the username {string} and password {string}")
-	public void enter_the_username_and_password(String username, String password) {
+	@When("Enter the username  and password")
+	public void enter_the_username_and_password(io.cucumber.datatable.DataTable dataTable) {
+	   List<Map<String,String>> credentialsList = dataTable.asMaps();
+	   String username = credentialsList.get(0).get("username");
+	   String password = credentialsList.get(0).get("password");
 	   loginpageobjects.setUserName(username);
 	   loginpageobjects.setPassword(password);
 	}
