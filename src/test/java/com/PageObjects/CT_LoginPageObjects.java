@@ -27,10 +27,12 @@ public class CT_LoginPageObjects {
 	WebElement loginButton;
 	
 	public void setUserName(String uname) {
+		username.click();
 		username.sendKeys(uname);
 	}
 	
 	public void setPassword(String pwd) {
+		password.click();
 		password.sendKeys(pwd);
 	}
 	
