@@ -1,10 +1,10 @@
 Feature: Validate the CloudTestr post build deployments
 
   Background: Login Background
-    Given Lanuch the URL "https://global.cloudtestr.com/app/#/login"
+    Given Lanuch the URL "https://staging.cloudtestr.com/app/#/core/dashboard"
     When Enter the username  and password
       | username                     | password     |
-      | RGl2eWEuS3Vra2FsYUBzdW5lcmF0ZWNoLmNvbQ== | V2VsY29tZUA0MzIx |
+      | c3RhZ2luZ0BzdW5lcmF0ZWNoLmNvbQ== | U3VuZXJhQDEyMw== |
     And Click on login button
 
   @Smoke
