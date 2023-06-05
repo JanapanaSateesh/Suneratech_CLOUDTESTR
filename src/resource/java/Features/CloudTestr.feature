@@ -20,7 +20,7 @@ Feature: Validate the CloudTestr post build deployments
   And Click on application dropdown from filter
   And Select the application as "SFDC"
   And Click on product dropdown from filter
-  And Select the product as "Account"
+  And Select the product as "Sales Cloud"
   And Click on search button
   Then validate widget values should contains Accounts "Accounts"
   
@@ -39,7 +39,7 @@ Feature: Validate the CloudTestr post build deployments
   And Click on application dropdown from filter
   And Select the application as "SFDC"
   And Click on product dropdown from filter
-  And Select the product as "Account"
+  And Select the product as "Sales Cloud"
   And Click on search button
   Then Verify the page should have test cases atleast one
   
@@ -47,7 +47,7 @@ Feature: Validate the CloudTestr post build deployments
   @Smoke
   Scenario: CT_TC_7 Search for test case and validate the test case id
   And Mouseover on design and expand design dropdown and click on test cases
-  And Search with the test case id "50966"
+  And Search with the test case id "17526"
   And Click on search button
   And Verify the page should have test cases atleast one
   Then Validate the test case should contain the test case id in the above step
@@ -55,7 +55,7 @@ Feature: Validate the CloudTestr post build deployments
   @Smoke
   Scenario: CT_TC_8 Search for test case and validate Audit Log
   And Mouseover on design and expand design dropdown and click on test cases
-  And Search with the test case id "50966"
+  And Search with the test case id "17526"
   And Click on search button
   And Verify the page should have test cases atleast one
   And Validate the test case should contain the test case id in the above step
@@ -67,7 +67,7 @@ Feature: Validate the CloudTestr post build deployments
   @Smoke
   Scenario: CT_TC_9 Search for test case and validate Documentation
   And Mouseover on design and expand design dropdown and click on test cases
-  And Search with the test case id "50966"
+  And Search with the test case id "17526"
   And Click on search button
   And Verify the page should have test cases atleast one
   And Validate the test case should contain the test case id in the above step
@@ -77,7 +77,7 @@ Feature: Validate the CloudTestr post build deployments
   @Smoke
   Scenario: CT_TC_10 Search for test case and validate Configuration lines
   And Mouseover on design and expand design dropdown and click on test cases
-  And Search with the test case id "50966"
+  And Search with the test case id "17526"
   And Click on search button
   And Verify the page should have test cases atleast one
   And Validate the test case should contain the test case id in the above step
@@ -89,7 +89,7 @@ Feature: Validate the CloudTestr post build deployments
   @Smoke
   Scenario: CT_TC_11 Search for test case and validate Configuration lines
   And Mouseover on design and expand design dropdown and click on test cases
-  And Search with the test case id "50966"
+  And Search with the test case id "17526"
   And Click on search button
   And Verify the page should have test cases atleast one
   And Validate the test case should contain the test case id in the above step
@@ -106,7 +106,7 @@ Feature: Validate the CloudTestr post build deployments
   @Smoke
   Scenario: CT_TC_13 Search for test set and validate the test set id
   And Mouseover on design and expand design dropdown and click on test set
-  And Search with the test set id "4859"
+  And Search with the test set id "1575"
   And Click on search button
   And Verify the page should have test set atleast one
   Then Validate the test set should contain the test set id in the above step
@@ -114,7 +114,7 @@ Feature: Validate the CloudTestr post build deployments
   @Smoke
   Scenario: CT_TC_14 Search for test set and validate the test set id
   And Mouseover on design and expand design dropdown and click on test set
-  And Search with the test set id "4859"
+  And Search with the test set id "1575"
   And Click on search button
   And Click on test set
   And Click on audit log tab
@@ -123,7 +123,7 @@ Feature: Validate the CloudTestr post build deployments
   @Smoke
   Scenario: CT_TC_15 Search for test set and validate the test set id
   And Mouseover on design and expand design dropdown and click on test set
-  And Search with the test set id "4859"
+  And Search with the test set id "1575"
   And Click on search button
   And Click on test set
   Then Vefify test set runhistory tab should have result files
@@ -148,7 +148,7 @@ Feature: Validate the CloudTestr post build deployments
   And Mouseover on integrations
   And Click on plan
   And Click on Releases
-  And Search for the release name "Unmonitored_Scripts_12"
+  And Search for the release name "Test-21"
   And Click on search button
   Then Validate only one release should display
   
@@ -164,6 +164,6 @@ Feature: Validate the CloudTestr post build deployments
     And Mouseover on integrations
     And Click on perform
     And Click on Execute
-    And Search for the release name "Unmonitored_Scripts_12"
+    And Search for the release name "Test-21"
     And Click on search button
     Then Validate only one release should display in execution page
