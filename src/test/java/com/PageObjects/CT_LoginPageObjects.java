@@ -17,13 +17,13 @@ public class CT_LoginPageObjects {
 		PageFactory.initElements(rdriver, this);
 	}
 	
-	@FindBy(xpath="//p[text()='User Name ']/../..//input")
+	@FindBy(id="username")
 	WebElement username;
 	
-	@FindBy(xpath="//p[text()='Password ']/../..//input")
+	@FindBy(id="password")
 	WebElement password;
 	
-	@FindBy(xpath="//button[text()='Login']")
+	@FindBy(xpath="//button[text()='Log In']")
 	WebElement loginButton;
 	
 	public void setUserName(String uname) {
