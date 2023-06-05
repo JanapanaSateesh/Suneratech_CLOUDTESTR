@@ -4,7 +4,7 @@ Feature: Validate the CloudTestr post build deployments
     Given Lanuch the URL "https://global.cloudtestr.com/app/#/login"
     When Enter the username  and password
       | username                     | password     |
-      | RGl2eWEuS3Vra2FsYUBzdW5lcmF0ZWNoLmNvbQ== | V2VsY29tZUA0MzIx |
+      | c3RhZ2luZ0BzdW5lcmF0ZWNoLmNvbQ== | U3VuZXJhQDEyMw== |
     And Click on login button
 
   @Smoke
